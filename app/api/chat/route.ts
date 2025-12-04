@@ -235,6 +235,7 @@ Keep responses clear and helpful.`,
           });
         } else {
           // Non-streaming response
+          // this is the main thing
           const response = await fetch(GROQ_API_URL, {
             method: "POST",
             headers: {
