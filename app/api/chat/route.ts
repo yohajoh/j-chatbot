@@ -115,7 +115,9 @@ export async function POST(request: NextRequest): Promise<Response> {
 
     // Parse request
     const body = await request.json();
-    let { messages, model = DEFAULT_MODEL, stream = false } = body;
+    const { messages } = body;
+    let model = body.model ?? DEFAULT_MODEL;
+    const stream = body.stream ?? false;
 
     // Validate messages
     if (!messages || !Array.isArray(messages) || messages.length === 0) {
