@@ -89,7 +89,7 @@ async function getBestAvailableModel(apiKey: string): Promise<string> {
   return DEFAULT_MODEL; // Fallback
 }
 
-export async function POST(request: NextRequest): Promise<NextResponse> {
+export async function POST(request: NextRequest): Promise<Response> {
   try {
     // Check API key first
     if (!GROQ_API_KEY) {
